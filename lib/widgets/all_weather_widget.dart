@@ -10,14 +10,7 @@ class AllWeatherWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final List<Weather> weatherList = weatherDataAll.list![0];
-    // final Weather weatherData = weatherList[0];
-    // final String? description = weatherData.description;
-    // final int? id = weatherData.id;
-    // final String? main = weatherData.main;
-    // final String? icon = weatherData.icon;
     return Column(
-      // Text('$description ${weatherDataCurrent.current.humidity}')
       children: [
         // temperature area
         temperaturAreaWidget(),
