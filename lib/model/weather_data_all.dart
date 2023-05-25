@@ -7,16 +7,19 @@ class DataWeather {
   final String? weatherMain;
   final int? allClouds;
   final double? windSpeed;
+  final double? pressure;
+  final double? feelsLike;
 
-  DataWeather({
-    required this.temperature,
-    required this.humidity,
-    required this.weatherDescription,
-    required this.weatherIcon,
-    required this.weatherMain,
-    required this.allClouds,
-    required this.windSpeed,
-  });
+  DataWeather(
+      {required this.temperature,
+      required this.humidity,
+      required this.weatherDescription,
+      required this.weatherIcon,
+      required this.weatherMain,
+      required this.allClouds,
+      required this.windSpeed,
+      required this.pressure,
+      required this.feelsLike});
 }
 
 class WeatherDataAll {
@@ -41,6 +44,8 @@ class WeatherDataAll {
       final weatherMain = weather['main'] as String;
       final allClouds = clouds['all'] as int;
       final windSpeed = (wind['speed'] as num?)?.toDouble();
+      final pressure = (main['pressure'] as num?)?.toDouble();
+      final feelsLike = (main['feels_like'] as num?)?.toDouble();
 
       return DataWeather(
           temperature: temperature,
@@ -49,6 +54,8 @@ class WeatherDataAll {
           weatherIcon: weatherIcon,
           weatherMain: weatherMain,
           windSpeed: windSpeed,
+          pressure: pressure,
+          feelsLike: feelsLike,
           allClouds: allClouds);
     }).toList();
 
